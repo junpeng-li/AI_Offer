@@ -1,3 +1,4 @@
+#解法1
 # -*- coding:utf-8 -*-
 class Solution:
     # matrix类型为二维列表，需要返回列表
@@ -22,3 +23,20 @@ class Solution:
             num1.append(num2)#把所有行列加到矩阵里，形成新到矩阵
         num1.reverse()#使列表反向，最终完成逆时针旋转矩阵对目的
         return num1
+
+    
+#解法2  递归的方法
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        self.res = []
+
+    def rotate(self, matrix):
+        return list(zip(*matrix))[-1::-1]#转制列表，然后反转
+
+    def printMatrix(self, matrix):
+        if not matrix:
+            return self.res
+        self.res.extend(matrix[0])
+        self.printMatrix(self.rotate(matrix[1:]))#每次传去掉第一行的矩阵
+        return self.res
