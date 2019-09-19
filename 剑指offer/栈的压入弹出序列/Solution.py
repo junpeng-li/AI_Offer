@@ -8,13 +8,14 @@ class Solution:
         if len(pushV) != len(popV):
             return False
         stack = []
-        j = 0
+        j = 0 #用来使对比的popV序列后移，和判断popV是否已经遍历完成
         for i in range(len(pushV)):
             stack.append(pushV[i])
+            #stack[len(stack) - 1]表示stack序列的当前最后一位的值
             #当popV还没有遍历完成，并且当前辅助序列的最后一个数等于popV的第一个数时
             while j < len(popV) and stack[len(stack) - 1] == popV[j]:
                 stack.pop()
-                j += 1 #若出栈一次，popV位置往后移动一次
+                j += 1#若出栈一次，popV位置往后移动一次
         if stack:
             return False
         else:
