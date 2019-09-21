@@ -79,3 +79,11 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
 ## 2.解题思路
 按题目要求先判断输入的这个数是否是负数，如果是负数，则用他的补码去表示这个数。判断二进制数中1的个数，可以直接用自己与上自己减去1，如：1111&1110，答案是1110，然后1110&1101=1100，如此循环，这个数里有多少个1就能循环多少次，要使用一个标识位记录循环的次数。
+# day4
+今天继续总结题目思路。
+## 一.[数值的整数次方](https://www.nowcoder.com/practice/1a834e5e3e1a4b7ba251417554e07c00?tpId=13&tqId=11165&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。  
+保证base和exponent不同时为0  
+### 2.解题思路
+首先把exponent和base同时为0的情况判断掉，然后设定一个辅助变量value=1，如果exponent=0点时候，则直接返回value，循环exponent的绝对值次，每次循环都使value *= base，在循环外判断如果exponent小于0的话直接让value等于他的倒数。最后返回value即可
