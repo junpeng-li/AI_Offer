@@ -5,7 +5,7 @@
 ## 一.[树的子结构：](https://www.nowcoder.com/practice/6e196c44c7004d15b1610b9afca8bd88?tpId=13&tqId=11170&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 ### 1.题目描述    
 输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）  
-### 2.解题思路  
+### 2.解题思路(https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/Solution.py)  
 解题的时候注意该画画图的就画下图吧。。  
 主函数：  
 1.首先看树1和树2的根结点是否一样，如果值一样，就以这个点为根结点判断树1是否包含树2 （送入判断函数）。   
