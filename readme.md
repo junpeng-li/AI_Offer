@@ -18,7 +18,7 @@
 
 ### 1.题目描述  
 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.  
-### 2.解题思路  
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/Solution.py)  
 注意画图。
 只需要一直取出矩阵的第一行，然后取出后再进行逆时针旋转90度就可以了。  
 可以采用递归和非递归两种不同的解法。要注意矩阵的旋转方法。在非递归解法中采用了遍历的方法去形成新矩阵，遍历的时候应该注意行列之间的变换方法。在递归解法中使用了zip函数转置矩阵，然后用切片的方法使矩阵反向，达到逆时针旋转90度的目的。
@@ -27,7 +27,7 @@
 ## 一.[包含min函数的栈](https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。  
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/Solution.py)
 这道题需要定义一个辅助栈，用来存储栈的最小值，因为这个辅助栈里的数是单调减小的，所以这个栈通常叫做单调栈。同时要设定一个min变量用来和新入栈的数做比较  
 假设压入栈的数依次是:[3,5,2,6,1]  
 则这个辅助栈里的数应该是:[3,3,2,2,1]  
@@ -38,7 +38,7 @@
 ## 二.[栈的压入弹出序列](https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&tqId=11174&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）  
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/Solution.py)
 需要一个辅助栈，用来还原压栈顺序。把压入栈的次序依次遍历到辅助栈里，比较辅助栈的最后一个数是否和第二个序列的第一个数相等，如果和第二个序列的第一个数相等，则把这两个数弹出，第二个序列的位数往后移动一位（这里需要设定一个辅助变量j，用来移位，和判断是否完成遍历），如果遍历完成，辅助序列还不是空，则说明这个序列不是弹出序列。
 
 # day3 
@@ -46,7 +46,7 @@
 ## 一.[二维数组中的查找](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/Solution.py)
 这个题首先要先确定数组大小长度不为空的时候往下走，从矩阵的右上角开始找，因为矩阵是从左到右递增，从上到下递增，如果矩阵的右上角那个数比target大，则所在的那一列就不用考虑了，列数减一，如果右上角那个数比target小，则这个数所在的这一行就不用考虑了，行数减一，循环。找到数就返回数，找不到就返回false。  
 
 ## 二.[替换空格](https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
