@@ -52,12 +52,12 @@
 ## 二.[替换空格](https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/Solution.py)
 定义一个字符串变量。遍历传入的字符串，如果这个字符等于空格则把%20加到这个辅助字符串变量里，如果不是空格，就直接把当前这个字符加到字符串变量里，最后输出这个辅助字符串变量。
 ## 三.[重建二叉树](https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&tqId=11157&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
-### 2.解题思路
+### 2.[解题思路]()
 二叉树的的题一般考虑递归的方法，递归包括三个部分，终止条件，裸机体，循环体。首先，前序遍历的方式是根左右，中序遍历的方式是左根右。所以前序遍历的第一个数一定是整个树的根结点，创建一个树的实例用来保存从前序遍历和中序遍历找到的数。知道根结点以后，在中序遍历里由根结点去划分左子树和右子树（没有重复的数，不用考虑根结点有重复数字的情况），中序遍历序列里这个值左边的就是左子树序列，右边的就是右子树序列。递归继续判断即可重建二叉树。需要注意，找到一个根结点以后要从前序遍历里删去这个结点。
 ## 四.[用两个栈实现对列](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
