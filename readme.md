@@ -225,8 +225,23 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 分行打印需要每行分开，于是相较于不分行打印，就需要多设定一个辅助数组，用来存放每一行里的数据，一个用来计算当前层结点个数的辅助变量，一个用来计算下一层结点个数的辅助变量。
 具体思路：
 分行需要设定两个辅助变量，记录当前这一层需要打印的结点数，以及下一层需要打印的结点数,设定一个辅助队列，用来遍历结点；一个当前层结果数组，存储当前这一层需要存储的结果；一个结果数组用来存储最终结果,把头结点添加到队列以后，开始遍历队列，每次弹出队列里的第一个元素，把这个值添加到当前结果数组里，当前个数减一,然后看以这个结点为头结点有没有左右子树，如果有的话，把他们放入queue里，并且下一层个数加一,如果当前个数为0了，说明这一层已经打印完毕，然后把当前层结果添加到总结果里，下一层个数复制给当前层个数,下一层个数清0，当前层结果变为空。
-## 3三.[之字形打印二叉树](https://www.nowcoder.com/practice/91b69814117f4e8097390d107d2efbe0?tpId=13&tqId=11212&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+## 三.[之字形打印二叉树](https://www.nowcoder.com/practice/91b69814117f4e8097390d107d2efbe0?tpId=13&tqId=11212&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
 ### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/之字形从上到下打印二叉树/Solution.py)
 相较于分行打印二叉树，这个题目只需要增加一个判断奇偶行的辅助变量，然后在最后把当前层的数按奇偶行反转或不反转即可。
+# day 10
+## 一.[二叉树中和为某一值的路径](https://www.nowcoder.com/practice/b736e784e3e34731af99065031301bca?tpId=13&tqId=11177&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)
+## 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/二叉树中和为某一值的路径/Solution.py)
+这个题是要求二叉树路径的和是否等于给定的数。即遍历二叉树的同时记录路径，把这条路径上的每一个值相加看是否等于target(可以采用减法的形式，判断这个路径的值减到最后是不是0)，输出所有满足这个条件的路径。采用递归的方法去遍历这个二叉树。  
+具体步骤：  
+设定两个数组，一个用来存放最后的结果，一个用来存放这条路径。首先判断这个树是否是空，如果是空直接返回空列表。把这个结点的值放到path数组里，然后target减去这个结点的值。  
+递归终止条件：在这个结点没有左右子树（即结点为叶子结点）并且target为0时，把记录当前路径的path数组加到answer数组里（此处需要注意，要把path的值赋给answer，否则answer会跟着path变）。  
+循环逻辑体：递归处理左右子树。  
+处理完最后要从path里把这个数pop掉，用来存放下一个结果。最终在最外层返回answer即可。
+
+## 二.[二叉搜索树的后序遍历](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+
