@@ -244,4 +244,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 
 ## 二.[二叉搜索树的后序遍历](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
-
+输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+### 2.[解题思路]()
+后序遍历的顺序是左右根，二叉搜索树里所有的左子树要比跟结点大，所有的右子树要比根结点小。  
+首先1后序遍历的特点取
