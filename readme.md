@@ -109,10 +109,10 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 五.[合并两个排序的链表](https://www.nowcoder.com/practice/d8b6b4358f774294a89de2a6ac4d9337?tpId=13&tqId=11169&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
-### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/合并两个排序的链表/Solution.py)
-思路1（递归）:首先设定两个变量head和temp，一个用来存储头结点的地址，一个用来遍历链表。采用递归的方法。终止条件有两个（同时用来做意外情况的判定）：链表1为空或者链表2为空。如果链表1为空的话，直接让temp.next=head2，如果链表2为空了，就把temp.next=head2。逻辑体：比较head1的值和head2的值看那个值小，就把temp.next指向这个链表，然后再把temp和temp.next链接起来,然后调用递归merge函数（参数要传入head1或head2的next），最终返回head.ext即可。需要注意的是递归是从最里层一层一层的返回，最外边返回的是第一个结点的值。  
+### 2.解题思路
+[思路1（递归）](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/合并两个排序的链表/Solution1.py):首先设定两个变量head和temp，一个用来存储头结点的地址，一个用来遍历链表。采用递归的方法。终止条件有两个（同时用来做意外情况的判定）：链表1为空或者链表2为空。如果链表1为空的话，直接让temp.next=head2，如果链表2为空了，就把temp.next=head2。逻辑体：比较head1的值和head2的值看那个值小，就把temp.next指向这个链表，然后再把temp和temp.next链接起来,然后调用递归merge函数（参数要传入head1或head2的next），最终返回head.ext即可。需要注意的是递归是从最里层一层一层的返回，最外边返回的是第一个结点的值。  
 
-思路2（非递归）：
+[思路2（非递归）](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/合并两个排序的链表/Solution2.py))：
 首先设定两个变量head和temp，一个用来存储头结点的地址，一个用来遍历链表。head1和head2都有值的时候才遍历，如果head1的值小于head2的值，然后把temp.next指向head1,然后head1向后移动一位，否则指向head2，head2向后移动一位。进行完成后，temp再向后移动一位。如果head1为空了，则直接把剩下的head2的所有值符给temp.next。如果head2为空了，同理。最后返回，head.next即可。
 # day 5
 ## 一.[二叉树的镜像](https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011?tpId=13&tqId=11171&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
