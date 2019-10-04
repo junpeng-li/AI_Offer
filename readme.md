@@ -64,13 +64,13 @@
 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
 ### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/用两个栈实现队列/Solution.py)
 题目的要求就是用先进后出的方式去实现一个先进先出的功能。需要一个栈作为辅助栈。push的时候只要往主栈里压就可以了。pop的时候从主栈里把数按顺序放到辅助栈里，然后每次返回辅助栈的最上面的数就可以了。需要判断辅助栈有数的情况，主栈没数的情况，主栈有数辅助栈没数的情况。
-## 五.[旋转数组的最小数字](https://www.nowcoder.com/practice/9f3231a991af4f55b95579b44b7a01ba?tpId=13&tqId=11159&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+## 五.[旋转数组的最小值](https://www.nowcoder.com/practice/9f3231a991af4f55b95579b44b7a01ba?tpId=13&tqId=11159&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。  
 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。  
 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。  
 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。  
-### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/旋转数组的最小数字/Solution.py)
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/旋转数组的最小值/Solution.py)
 数组是一个非递减数组，也就是说可能是纯递增的，也有可能是递增的数组中，有重复的数。使用二分法，设定左右两个标，右边小于0说明数组为空直接返回0。如果左标志没有碰到右标志的时候遍历，先找到中间值，如果中间值大于等于右边界值，说明中间值位于前边的递增子数组里，则最小数一定在中间值右边，此时left=mid+1。如果中间值小于右边界值。说明中间值位于后边的递增子数组里，则证明最小数一定在中间值的左边,此时right等于mid.
 ## 六.[斐波那契数列](https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=13&tqId=11160&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
