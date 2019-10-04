@@ -57,12 +57,12 @@
 ## 三.[重建二叉树](https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&tqId=11157&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
-### 2.[解题思路]()
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/重建二叉树/Solution.py)
 二叉树的的题一般考虑递归的方法，递归包括三个部分，终止条件，裸机体，循环体。首先，前序遍历的方式是根左右，中序遍历的方式是左根右。所以前序遍历的第一个数一定是整个树的根结点，创建一个树的实例用来保存从前序遍历和中序遍历找到的数。知道根结点以后，在中序遍历里由根结点去划分左子树和右子树（没有重复的数，不用考虑根结点有重复数字的情况），中序遍历序列里这个值左边的就是左子树序列，右边的就是右子树序列。递归继续判断即可重建二叉树。需要注意，找到一个根结点以后要从前序遍历里删去这个结点。
 ## 四.[用两个栈实现对列](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/用两个栈实现队列/Solution.py)
 题目的要求就是用先进后出的方式去实现一个先进先出的功能。需要一个栈作为辅助栈。push的时候只要往主栈里压就可以了。pop的时候从主栈里把数按顺序放到辅助栈里，然后每次返回辅助栈的最上面的数就可以了。需要判断辅助栈有数的情况，主栈没数的情况，主栈有数辅助栈没数的情况。
 ## 五.[旋转数组的最小数字](https://www.nowcoder.com/practice/9f3231a991af4f55b95579b44b7a01ba?tpId=13&tqId=11159&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
@@ -70,17 +70,17 @@
 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。  
 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。  
 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。  
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/旋转数组的最小数字/Solution.py)
 数组是一个非递减数组，也就是说可能是纯递增的，也有可能是递增的数组中，有重复的数。使用二分法，设定左右两个标，右边小于0说明数组为空直接返回0。如果左标志没有碰到右标志的时候遍历，先找到中间值，如果中间值大于等于右边界值，说明中间值位于前边的递增子数组里，则最小数一定在中间值右边，此时left=mid+1。如果中间值小于右边界值。说明中间值位于后边的递增子数组里，则证明最小数一定在中间值的左边,此时right等于mid.
 ## 六.[斐波那契数列](https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=13&tqId=11160&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。n<=39
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/斐波那契数列/Solution.py)
 使用循环的思路，先设定初始数组为0和1，然后当数组小于n的时候，把这个数组最后两个数相加得到的那个数添加到这个初始数组里。最后返回这个初始数组的第n个数。
 ## 七.[二进制中1的个数](https://www.nowcoder.com/practice/8ee967e43c2c4ec193b040ea7fbb10b8?tpId=13&tqId=11164&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ## 1.题目描述
 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
-## 2.解题思路
+## 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/二进制中1的个数/Solution.py)
 按题目要求先判断输入的这个数是否是负数，如果是负数，则用他的补码去表示这个数。判断二进制数中1的个数，可以直接用自己与上自己减去1，如：1111&1110，答案是1110，然后1110&1101=1100，如此循环，这个数里有多少个1就能循环多少次，要使用一个标识位记录循环的次数。
 # day4
 今天继续总结题目思路。
@@ -88,28 +88,28 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ### 1.题目描述
 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。  
 保证base和exponent不同时为0  
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/数值的整数次方/Solution.py)
 首先把exponent和base同时为0的情况判断掉，然后设定一个辅助变量value=1，如果exponent=0点时候，则直接返回value，循环exponent的绝对值次，每次循环都使value *= base，在循环外判断如果exponent小于0的话直接让value等于他的倒数。最后返回value即可
 ## 二.[调整数组顺序使奇数位于偶数的前边](https://www.nowcoder.com/practice/beb5aa231adc45b2a5dcc5b62c93f593?tpId=13&tqId=11166&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/调整数组顺序使奇数位于偶数的前边/Solution.py)
 思路一: 设定两个数组，用来存放筛选遍历过的奇数和偶数。然后开始遍历数组，把奇数放在奇数的数组里，偶数放在偶数的数组里，遍历完成以后返回奇数数组和偶数数组的相加的列表即可。  
 思路二(这个思路无法保证奇数和奇数偶数和偶数之间的相对位置不变)：设定两个指针，一个从前往后指一个从后往前指，保证第一个指针前面的数全是奇数，第二个指针后面的数全都是偶数。当第一个指针小于等于第二个指针的时候，指针开始移动，然后此时判断第一个指针指向的数是不是奇数，第二个指针指向的数是不是偶数。如果第一个指针指向的数不是奇数，跳出小循环，等待第二个指针指向的数不是偶数。交换两个位置上的数。在两个指针还没有相遇的时候交换这两个位置上的数。遍历完成以后就是前边是奇数序列，后边是偶数序列。
 ## 三.[链表中倒数第k个结点](https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&tqId=11167&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入一个链表，输出该链表中倒数第k个结点。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/链表中倒数第k个结点/Solution.py)
 可以设定两个快慢指针，先让快指针走k步，然后再让快指针和慢指针一起走，当快指针走到最后指向空的时候，慢指针指向的位置就是倒数第k个结点。
 ## 四.[反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入一个链表，反转链表后，输出新链表的表头。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/反转链表/Solution.py)
 定义两个指针，分别记录当前位值和前一个位置。链表的反转需要把当前位置的结点指向前一个位置，最好设定一个中间变量，去存储cur.next，用来让cur指针可以继续往下走，因为当cur.next指向前一个位置以后，就和后面的位置断开了联系，要用一个中间变量去记录一下后边的位置。然后让中间变量指向下一个位置，当前指针指向前一个位置，前一个位置等于当前位置，当前位置等于中间变量。即可完成交换。
 ## 五.[合并两个排序的列表](https://www.nowcoder.com/practice/d8b6b4358f774294a89de2a6ac4d9337?tpId=13&tqId=11169&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/合并两个排序的列表/Solution.py)
 思路1（递归）:首先设定两个变量head和temp，一个用来存储头结点的地址，一个用来遍历链表。采用递归的方法。终止条件有两个（同时用来做意外情况的判定）：链表1为空或者链表2为空。如果链表1为空的话，直接让temp.next=head2，如果链表2为空了，就把temp.next=head2。逻辑体：比较head1的值和head2的值看那个值小，就把temp.next指向这个链表，然后再把temp和temp.next链接起来,然后调用递归merge函数（参数要传入head1或head2的next），最终返回head.ext即可。需要注意的是递归是从最里层一层一层的返回，最外边返回的是第一个结点的值。  
 
 思路2（非递归）：
@@ -118,18 +118,18 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 一.[二叉树的镜像](https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011?tpId=13&tqId=11171&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 把二叉树变为他的镜像。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/二叉树的镜像/Solution.py)
 把原来的二叉树变为他的镜像，即左结点变为右结点，右结点变为左结点。  
 采用递归的思路，终止条件：树遍历结束。逻辑体：左结点值和右结点值交换(设定中间值遍量，或者python中可以一行解决)。循环体：先递归左子树，再递归右子树。
 ## 二.[数组中重复的数字](https://www.nowcoder.com/practice/623a5ac0ea5b4e5f95552655361ae0a8?tpId=13&tqId=11203&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。  
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/数组中重复的数字/Solution.py)
 因为题目是在0到n-1点范围内。所以可以利用现有的数作标志，如果遍历过了这个数，则在数组里以这个数为下标的位置上加上n。之后再遇到相同值的时候会发现，这个值对应下标位置是大于n的，此时这个数字就是重复数字。在判断这个值对应下标位置的数是否大于n之前需要加上一条过滤条件。因为有可能会出现没有遍历过这个位置的数，但是这个位置的数已经被加过n了的情况，所以需要判断看这个位置的数是否大于n，如果大于n，则直接减n让他在作为index的值恢复原来的数。这里并没有改变数组，仅仅只是改变了循环查找时的下标。
 ## 三.[正则表达式匹配](https://www.nowcoder.com/practice/45327ae22b7b413ea21df13ee7d6429c?tpId=13&tqId=11205&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请实现一个函数用来匹配包括'.'和'*'的正则表达式。模式中的字符'.'表示任意一个字符，而'*'表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串"aaa"与模式"a.a"和"ab*ac*a"匹配，但是与"aa.a"和"ab*a"均不匹配
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/正则表达式匹配/Solution.py)
 这个题主要考察思维的缜密性。有四大种情况需要判断。  
 1.如果s和pattern都为空，则返回true。  
 2.如果s不为空pattern为空，返回false。  
@@ -142,7 +142,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 一.[表示数值的字符串](https://www.nowcoder.com/practice/6f8c901d091949a5837e24bb82a731f2?tpId=13&tqId=11206&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串"+100","5e2","-123","3.1416"和"-1E-16"都表示数值。 但是"12e","1a3.14","1.2.3","+-5"和"12e+4.3"都不是。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/表示数值的字符串/Solution.py)
 从头开始遍历字符串，判断是否为数值需要判断的大情况分为四种。分别是e，符号，小数点，看每位数是否在0-9范围内。由于前三种情况可能会存在关联判断的情况(如：小数点前不能出现小数点和e)，所以需要设定三个标志位，用来标志看这三种情况是否已经出现过了。   
 (1)对于e来说，e不能出现两次，也不能出现在最后，因为e后面要有数字。需要判断e是不是第二次出现，还要判断e的位置是不是最后一个。  
 (2)对于符号位来说。如果符号位第一次出现,若不是在首位出现，则只能出现在e的后面。如果符号第二次出现，则只能出现在e后面。所以如果符号是第二次出现，则看是不是跟在e之后，如果不是返回false。如果如果符号第一次出现，把符号相关标志位记为true，若在这种情况下i>0,且符号前一个字符不是e，则返回false。  
@@ -152,26 +152,26 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 二.[链表中环的入口结点](https://www.nowcoder.com/practice/253d2c59ec3e4bc68da16833f79a38e4?tpId=13&tqId=11208&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/链表中环的入口结点/Solution.py)
 首先利用快慢指针的方法，判断看这个里有没有环，即先设定两个指针指向头结点，一个判断有无指针的标志位，快指针每次走两步，慢指针每次走一步，如果两个指针相遇，则说明有环。如果有环的话需要设定一个slow2指针让其从头开始走，另一个指针从快慢指针相遇的那个位置开始走，当slow2和另一个指针相遇的点，就是环的入口处。（此处证明可以自己画图思考一下，或者从网上搜一下证明）。  
 # day7
 一.[删除链表中重复的结点](https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&tqId=11209&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/删除链表中重复的结点/Solution.py)
 删除重复结点，遍历链表，然后一个个把非重复指针串联起来就可以了。  
 终止条件：如果head或head.next为空则停止递归，返回head。  
 循环逻辑体：比较看当前结点的值和next指针的值是不是相等，如果相等的话，设定一个辅助指针p为head.next.next，让p往后走直到p为空或者p的值不等于当前结点的值，递归返回继续处理以p为头结点的情况。如果当前结点的值和下个结点的值不相等，则以继续递归处理以下个结点为头结点的情况，最终返回头结点即可。
 ## 二.[二叉树的下一个结点](https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&tqId=11210&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/二叉树的下一个结点/Solution.py)
 中序遍历的顺序是左根右。找树的下一个结点的话，需要判断看这个树是有没有右子树。首先判断给定结点是否有右子树，这个结点有右子树，则直接返回右子树的最左边那个数即可。如果给定结点没有右子树，则需要看这个结点的下一个值的左结点是不是这个结点，如果是，则返回这个结点的下一个结点即可。其他情况为none
 # day8
 ## 一.[对称的二叉树](https://www.nowcoder.com/practice/ff05d44dfdb04e1d83bdbdab320efbcb?tpId=13&tqId=11211&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/对称的二叉树/Solution.py)
 一个二叉树是不是对称的就是看左右树是否对称。即把这一棵树的左子树和右子树看成两棵树，看树1的左子树是不是等于树2点右子树，树2点右子树是不是等于树1点左子树。  
 主函数：  
 先判断树是不是空，如果是空直接返回true。如果不是空，把分别把树的左子树和右子树作为参数传入一个判断函数。返回这个判断函数的值即可。  
@@ -182,7 +182,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 二.[矩阵中的路径](https://www.nowcoder.com/practice/c61c6999eecb4b8f88a98f66b273a3cc?tpId=13&tqId=11218&tPage=4&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串"bcced"的路径，但是矩阵中不包含"abcb"路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。
-### 解题思路：
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/矩阵中的路径/Solution.py)
 整体思路就是在matrix里找与path字符相同格子，以这个格子为起点，去查找上下左右的数，看是否有和path里相同的，如果有就继续往前走，如果没有就返回上一步，继续寻找在matrix里与path第一个字符相同的格子，若遍历完成还没找到就返回false。   
 具体步骤：  
 主函数：  
@@ -196,7 +196,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 三.[机器人的运动路径](https://www.nowcoder.com/practice/6e5207314b5241fb83f2329e89fdecc8?tpId=13&tqId=11219&tPage=4&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/机器人的运动路径/Solution.py)
 初始化一个集合，用来存放走过的格子，把k值和起始点0，0传入搜索函数，让机器人走。最终检查集合的长度就是机器人走过的长度。  
 判断函数：  
 用来判断看机器人走过的路线加和是否超过了k值。利用map函数吧这些数变成整形，然后i相加，j相加。 返回加和是否小于k值。  
@@ -207,7 +207,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ## 四.[剪绳子](https://www.nowcoder.com/practice/57d85990ba5b440ab888fc72b0751bf8?tpId=13&tqId=33257&tPage=4&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 给你一根长度为n的绳子，请把绳子剪成m段（m、n都是整数，n>1并且m>1），每段绳子的长度记为k[0],k[1],...,k[m]。请问k[0]xk[1]x...xk[m]可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
-### 2.解题思路
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/剪绳子/Solution.py)
 证明摘自牛客网题解（qt菜鸡弟弟）。   
 贪婪解法：当n大于等于5时，我们尽可能多的剪长度为3的绳子；当剩下的绳子长度为4时，把绳子剪成两段长度为2的绳子。 为什么选2，3为最小的子问题？因为2，3包含于各个问题中，如果再往下剪得话，乘积就会变小。 为什么选长度为3？因为当n≥5时，3(n−3)≥2(n−2)。
 具体步骤：  
