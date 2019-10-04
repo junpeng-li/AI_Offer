@@ -140,7 +140,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 (1)判断如果s的长度大于1并且pattern的第二个字符是*。则继续嵌套判断，如果s[0]不等于pattern[0]并且pattern的第一个字符不是.，此时相当于pattern前两个字符不起作用，递归调用s和pattern[2:]，从pattern的第三个字符开始匹配。如果不是这种状况（即pattern[0]与s[0]相等，或者pattern[0]为.，且此时pattern的第二个字符是*），此时则前两个字符起了作用，此时pattern的前两个字符是.*,在正则中点星点意义是可以匹配0到多个字符，则可以把s不变，pattern向后移动两位，此时相当于把pattern的前两个字符看成了没有；也可以把s向后移动一位，pattern移动两位，相当于pattern两个字符匹配了s的一位字符；也可以把s向后移动一位，pattern不变，此时相当于pattern匹配s的多个位置。  
 (2)如果不是第一种状况（即s的长度小于等于1或者pattern第二个字符不是*）。此时则需要嵌套判断看s和pattern的第一个字符是不是相等，或者看pattern的第一个字符是不是.，如果是就继续递归,s和pattern往后移动一位判断。如果不是则返回false。
 # day6
-## 一.[表示数值的字符串](https://www.nowcoder.com/practice/6f8c901d091949a5837e24bb82a731f2?tpId=13&tqId=11206&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+# 一.[表示数值的字符串](https://www.nowcoder.com/practice/6f8c901d091949a5837e24bb82a731f2?tpId=13&tqId=11206&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串"+100","5e2","-123","3.1416"和"-1E-16"都表示数值。 但是"12e","1a3.14","1.2.3","+-5"和"12e+4.3"都不是。
 ### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/表示数值的字符串/Solution.py)
@@ -156,7 +156,7 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 ### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/链表中环的入口结点/Solution.py)
 首先利用快慢指针的方法，判断看这个里有没有环，即先设定两个指针指向头结点，一个判断有无指针的标志位，快指针每次走两步，慢指针每次走一步，如果两个指针相遇，则说明有环。如果有环的话需要设定一个slow2指针让其从头开始走，另一个指针从快慢指针相遇的那个位置开始走，当slow2和另一个指针相遇的点，就是环的入口处。（此处证明可以自己画图思考一下，或者从网上搜一下证明）。  
 # day7
-一.[删除链表中重复的结点](https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&tqId=11209&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+## 一.[删除链表中重复的结点](https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&tqId=11209&tPage=3&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
 ### 1.题目描述
 在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5
 ### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/删除链表中重复的结点/Solution.py)
