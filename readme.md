@@ -262,3 +262,34 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 1.复制结点：设定一个辅助变量dummy去记录当前位置的头结点位置，然后开始遍历，把每一个复制结点放在原链表对应结点的后面。最后让dummy向下移动一个位置。  
 2.处理随机指针：dummy=head，继续从原头结点开始遍历，设定一个变量标记dummy.next为copynode。查找每一个原结点是否存在随机指针，如果存在随机指针，则copynode的随机指针即为原链表结点指针的下一个位置。因为此时两个原结点中间有一个复制结点，所以最后需要让dummy=copynode.next，向后移动两个位置进行遍历。  
 3.把原链表和复制链表分开。设定两个辅助变量，一个用来标记原链表头结点，一个用来标记复制链表的头结点。只要原链表结点存在就继续遍历，设定一个变量copeNode=dummy.next用来标记那些是复制结点,如果原链表结点的下一个结点存在的话，则copyNode.next=dummynext.next，如果不存在则把copyNode.next指向None.最后返回复制链表的头结点即可。
+#day 18
+状态不太好。。。晕晕乎乎继续开始
+## 一.[数组中出现次数超过一半的数字](https://www.nowcoder.com/practice/e8a1b01a2df14cb2b228b30ee6a92163?tpId=13&tqId=11181&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/Solution.py)
+思路1，可以对数组进行排序，然后针对排序过后对数组，取出中间对那个数字，必定是出现次数超过数组长度一半的。  
+思路2，设置一个辅助变量计算数字出现的从次数，一个辅助变量保存当前这个数。从第一个数开始遍历，如果后面的这个数和第一个数相同，则次数变量加一，如果不同次数变量减一。若次数变量为0的时候，储存数字的变量减一换成后面的这个数，然后把次数变量置1。遍历结束，最终保存在辅助数组里的那个数就是要求的数，再判断一下这个数是不是在数组中出现的次数满足要求即可。
+## 二.[序列化二叉树](https://www.nowcoder.com/practice/cf7e25aa97c04cc1a68c8f040e71fb84?tpId=13&tqId=11214&tPage=4&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+请实现两个函数，分别用来序列化和反序列化二叉树  
+二叉树的序列化是指：把一棵二叉树按照某种遍历方式的结果以某种格式保存为字符串，从而使得内存中建立起来的二叉树可以持久保存。序列化可以基于先序、中序、后序、层序的二叉树遍历方式来进行修改，序列化的结果是一个字符串，序列化时通过 某种符号表示空节点（#），以 ！ 表示一个结点值的结束（value!）。  
+二叉树的反序列化是指：根据某种遍历顺序得到的序列化字符串结果str，重构二叉树。  
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/Solution.py)
+序列化：用前序遍历的方法遍历整棵树，按要求把树里的数值，排列成一个序列。  
+反序列化：先把字符串转换为列表的格式，然后针对这个列表，用前序遍历的思路把树建起来即可。
+## 三.[二叉搜索树的后序遍历序列](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/Solution.py)
+后序遍历是左右根，二叉搜索树里的所有左子树要比根结点小，右子树要比根结点大，可以先通过后序遍历的最后一个数确定这棵树的根结点，然后用递归分别判断前后两个部分是否符合要求。
+## 四.[字符串的排列](https://github.com/junpeng-li/AI_Offer/blob/master/%E5%89%91%E6%8C%87offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/Solution.py)
+### 1.题目描述
+输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/字符串的排列/Solution.py)
+如果字符串少于1个则直接返回这个字符串即可。设定一个结果列表存储最终的结果，循环遍历，每次固定一个字符i，嵌套循环j，然后其他的字符利用切片的方法把数组传进去进行递归循环。最后判断如果结果数组里没有这个组合，就把这个组合j添加到结果数组里。
+## 五.[最小的k个数](https://www.nowcoder.com/practice/6a296eb82cf844ca8539b57c23e6e9bf?tpId=13&tqId=11182&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/最小的k个数/Solution.py)
+写一个快排，然后把输入的序列用快排排好，取前k个数即可。
