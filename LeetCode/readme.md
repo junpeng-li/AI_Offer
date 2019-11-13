@@ -6,7 +6,7 @@
 这个题其实就是找联合在一起的1有多少块，再说的直白一点就是寻找被0隔开了的1分散了几个地方。所以我们可以通过遍历矩阵的行和列去检查有多少1是联合在一起的，
 递归搜索的时候，寻找当前这个值上下左右四个位置的值就可以了，如果是1就把这个值变成0 ，防止被再次遍历。  
 
-此思路来自[jyd](https://leetcode-cn.com/problems/number-of-islands/solution/number-of-islands-shen-du-you-xian-bian-li-dfs-or-/)
+### 此思路来自[jyd](https://leetcode-cn.com/problems/number-of-islands/solution/number-of-islands-shen-du-you-xian-bian-li-dfs-or-/)
 dfs方法： 设目前指针指向一个岛屿中的某一点 (i, j)，寻找包括此点的岛屿边界。
 从 (i, j) 向此点的上下左右 (i+1,j),(i-1,j),(i,j+1),(i,j-1) 做深度搜索。  
 终止条件：  
