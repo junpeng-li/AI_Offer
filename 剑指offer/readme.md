@@ -293,3 +293,10 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
 ### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/最小的k个数/Solution.py)
 写一个快排，然后把输入的序列用快排排好，取前k个数即可。
+# day 19 
+我真是个菜鸡，放平心态，该干啥干啥。
+## 一.[从尾到头打印链表](https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&tqId=11156&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)
+### 1.题目描述
+输入一个链表，按链表从尾到头的顺序返回一个ArrayList。
+### 2.[解题思路](https://github.com/junpeng-li/AI_Offer/blob/master/剑指offer/从尾到头打印链表/Solution.py)
+从尾到头打印链表，自然就想到了可以使用辅助栈去打印这个链表。所以可以先设定一个列表作为辅助栈，如果链表不为空的话，就把当前节点的值取出来，放到这个栈里，然后将节点向下移动，最后将辅助栈反转输出，则返回的就是从尾到头的链表的值。
